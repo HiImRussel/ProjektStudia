@@ -28,11 +28,21 @@ bool canBeDelivered(string delivery_hour) {
 
     int weekday = timeinfo->tm_wday;
 
-    if (delivery_hour.length() != 4 && weekday == 7) return false;
+    int current_hour = timeinfo->tm_hour;
+    int current_minutes = timeinfo->tm_min;
+
+    if (delivery_hour.length() != 5 || weekday == 7) return false;
 
     //checking if can be delivered in working days
     int picked_hour = splitAndConvertStringToNumbers(delivery_hour)[0];
     int picked_minutes = splitAndConvertStringToNumbers(delivery_hour)[1];
+
+    if (picked_hour < current_hour) {
+        return false;
+    }
+    else if(picked_hour==current_hour && picked_minutes <= current_minutes) {
+        return false;
+    }
 
     if (weekday >= 1 && weekday <= 5) {
         int working_hour_from = splitAndConvertStringToNumbers(working_days_from)[0];
