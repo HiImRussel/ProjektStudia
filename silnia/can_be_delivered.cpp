@@ -28,7 +28,7 @@ bool canBeDelivered(string delivery_hour) {
 
     int weekday = timeinfo->tm_wday;
 
-    if (delivery_hour.length() != 4 && weekday == 7) cout << "nieprawidlowa godzina";
+    if (delivery_hour.length() != 4 && weekday == 7) return false;
 
     //checking if can be delivered in working days
     int picked_hour = splitAndConvertStringToNumbers(delivery_hour)[0];
@@ -41,7 +41,7 @@ bool canBeDelivered(string delivery_hour) {
         int working_hour_to = splitAndConvertStringToNumbers(working_days_to)[0];
         int working_minutes_to = splitAndConvertStringToNumbers(working_days_to)[1];
 
-        checkIfCanBeDelivered(picked_hour, picked_minutes, working_hour_from, working_minutes_from, working_hour_to, working_minutes_to);
+        return checkIfCanBeDelivered(picked_hour, picked_minutes, working_hour_from, working_minutes_from, working_hour_to, working_minutes_to);
     }
     else if (weekday == 6) {
         //check if can be delivered in weekend working hours
@@ -51,7 +51,7 @@ bool canBeDelivered(string delivery_hour) {
         int working_hour_to = splitAndConvertStringToNumbers(weekend_days_to)[0];
         int working_minutes_to = splitAndConvertStringToNumbers(weekend_days_to)[1];
         
-        checkIfCanBeDelivered(picked_hour, picked_minutes, working_hour_from, working_minutes_from, working_hour_to, working_minutes_to);
+        return checkIfCanBeDelivered(picked_hour, picked_minutes, working_hour_from, working_minutes_from, working_hour_to, working_minutes_to);
     }
     else {
         return false;
