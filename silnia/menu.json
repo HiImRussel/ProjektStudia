@@ -1,0 +1,16 @@
+{
+    "menu": [
+        {
+            "id": 0,
+            "name": "dish_one",
+            "price": 0.0,
+            "category": "category_name"
+        },
+        {
+            "id": 1,
+            "name": "dish_two",
+            "price": 0.0,
+            "category": "category_name"
+        }
+    ]
+}
