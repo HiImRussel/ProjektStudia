@@ -1,13 +1,16 @@
 ﻿#include <iostream>
 #include "global_variables.h"
+#include "can_be_delivered.h" 
 
 using namespace std;
 
 string user_name;
+int table_number;
 
 int main()
 {
     int delivery_type;
+    string delivery_hour;
 
     cout << "Restauracja u Eryka, Mateusza, Jakuba i Jakuba" << endl;
     cout << "Adres:" << endl;
@@ -35,10 +38,33 @@ int main()
 
         switch (delivery_type) {
         case 1:
-            cout << "1";
+            do {
+                cout << "Prosze podac number stolika: ";
+                cin >> table_number;
+
+                if (!isdigit(table_number)) {
+                    cout << endl;
+
+                    cout << "Prosze wprowadzic odpowiedni numer stolika" << endl;
+                    
+                    cin.get();
+                    cin.get();
+                }
+
+            } while (!isdigit(table_number));
             break;
         case 2:
-            cout << "2";
+            cout << "Godziny pracy restauracji:" << endl;
+            cout << "Pn-Pt: " << working_days_from <<" - "<< working_days_to << endl;
+            cout << "Sb: " << weekend_days_from << " - " << weekend_days_to << endl;
+
+            cout << endl;
+
+            cout << "Prosze wprowadzic godzine dostawy w formacie [hh:mm]: ";
+            cin >> delivery_hour;
+
+            canBeDelivered(delivery_hour);
+
             break;
         default:
             cout << "Nie rozpoznano metody dostawy, prosze wprowadzic ponownie";

@@ -139,10 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="silnia.cpp" />
+    <ClCompile Include="mian.cpp" />
+    <ClCompile Include="can_be_delivered.cpp" />
+    <ClCompile Include="split_and_convert_string_to_number.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global_variables.h" />
+    <ClInclude Include="can_be_delivered.h" />
+    <ClInclude Include="split_and_convert_string_to_number.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
