@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "global_variables.h"
-#include "can_be_delivered.h" 
+#include "can_be_delivered.h"
+#include "pick_from_menu.h"
 
 using namespace std;
 
@@ -19,11 +20,25 @@ int main()
 
     cout << endl;
 
-    cout << "Wprowadz swoje Imie: ";
-    cin >> user_name;
+    do {
+        cout << "Wprowadz swoje Imie: ";
+        cin >> user_name;
 
-    cout << "Wprowadz swoje Nazwisko: ";
-    cin >> user_surname;
+        cout << "Wprowadz swoje Nazwisko: ";
+        cin >> user_surname;
+
+        if (user_name.length() <= 0 || user_surname.length() <= 0) {
+            system("cls");
+
+            cout << "Wprowadzono niepoprawne dane, prosze wprowadzic ponownie" << endl;
+
+            cin.get();
+            cin.get();
+
+            system("cls");
+        }
+
+    } while (user_name.length() <= 0 || user_surname.length() <= 0);
 
     system("cls");
 
@@ -79,7 +94,9 @@ int main()
                 }
 
             } while (!canBeDelivered(delivery_hour));
-            cout << "nextstep";
+            
+            pickFromMenu();
+
             break;
         default:
             cout << "Nie rozpoznano metody dostawy, prosze wprowadzic ponownie";

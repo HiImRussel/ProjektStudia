@@ -139,14 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="checkout.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="can_be_delivered.cpp" />
     <ClCompile Include="split_and_convert_string_to_number.cpp" />
     <ClCompile Include="global_varaibles.cpp" />
+    <ClCompile Include="pick_from_menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="checkout.h" />
     <ClInclude Include="global_variables.h" />
     <ClInclude Include="can_be_delivered.h" />
+    <ClInclude Include="pick_from_menu.h" />
     <ClInclude Include="split_and_convert_string_to_number.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
