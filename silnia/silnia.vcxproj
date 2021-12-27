@@ -142,6 +142,7 @@
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="can_be_delivered.cpp" />
     <ClCompile Include="split_and_convert_string_to_number.cpp" />
+    <ClCompile Include="global_varaibles.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global_variables.h" />

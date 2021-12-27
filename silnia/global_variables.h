@@ -3,11 +3,15 @@
 using namespace std;
 
 extern string user_name;
+extern string user_surname;
 extern int table_number;
+extern int delivery_type;
+extern string delivery_hour;
+
 
 //restaurant open hours varaible
-string working_days_from = "08:00";
-string working_days_to = "20:00";
+extern string working_days_from;
+extern string working_days_to;
 
-string weekend_days_from = "08:00";
-string weekend_days_to = "18:00";
+extern string weekend_days_from;
+extern string weekend_days_to;

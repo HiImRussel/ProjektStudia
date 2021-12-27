@@ -4,6 +4,6 @@
 
 using namespace std;
 
-void canBeDelivered(string delivery_hour);
+bool canBeDelivered(string delivery_hour);
 
 #endif

@@ -5,13 +5,13 @@
 using namespace std;
 
 string user_name;
+string user_surname;
 int table_number;
+int delivery_type;
+string delivery_hour;
 
 int main()
 {
-    int delivery_type;
-    string delivery_hour;
-
     cout << "Restauracja u Eryka, Mateusza, Jakuba i Jakuba" << endl;
     cout << "Adres:" << endl;
     cout << "Miasto: XYZ" << endl;
@@ -19,8 +19,11 @@ int main()
 
     cout << endl;
 
-    cout << "Wprowadz swoje Imie i Nazwisko: ";
+    cout << "Wprowadz swoje Imie: ";
     cin >> user_name;
+
+    cout << "Wprowadz swoje Nazwisko: ";
+    cin >> user_surname;
 
     system("cls");
 
@@ -54,17 +57,29 @@ int main()
             } while (!isdigit(table_number));
             break;
         case 2:
-            cout << "Godziny pracy restauracji:" << endl;
-            cout << "Pn-Pt: " << working_days_from <<" - "<< working_days_to << endl;
-            cout << "Sb: " << weekend_days_from << " - " << weekend_days_to << endl;
+            do {
+                cout << "Godziny pracy restauracji:" << endl;
+                cout << "Pn-Pt: " << working_days_from << " - " << working_days_to << endl;
+                cout << "Sb: " << weekend_days_from << " - " << weekend_days_to << endl;
 
-            cout << endl;
+                cout << endl;
 
-            cout << "Prosze wprowadzic godzine dostawy w formacie [hh:mm]: ";
-            cin >> delivery_hour;
+                cout << "Prosze wprowadzic godzine dostawy w formacie [hh:mm]: ";
+                cin >> delivery_hour;
+                
+                if (!canBeDelivered(delivery_hour)) {
+                    system("cls");
 
-            canBeDelivered(delivery_hour);
+                    cout << "Wprowadzono niepoprawna godzine dostawy, prosze wprowadzic godzine ponownie." << endl;
+                    
+                    cin.get();
+                    cin.get();
 
+                    system("cls");
+                }
+
+            } while (!canBeDelivered(delivery_hour));
+            cout << "nextstep";
             break;
         default:
             cout << "Nie rozpoznano metody dostawy, prosze wprowadzic ponownie";
