@@ -56,20 +56,12 @@ int main()
 
         switch (delivery_type) {
         case 1:
-            do {
                 cout << "Prosze podac number stolika: ";
                 cin >> table_number;
+                
+                system("cls");
 
-                if (!isdigit(table_number)) {
-                    cout << endl;
-
-                    cout << "Prosze wprowadzic odpowiedni numer stolika" << endl;
-                    
-                    cin.get();
-                    cin.get();
-                }
-
-            } while (!isdigit(table_number));
+                pickFromMenu();
             break;
         case 2:
             do {
