@@ -10,7 +10,7 @@
 using namespace std;
 
 
-/*void addProductToCart(string id) {
+void addProductToCart(string id) {
 	vector<vector<string>> Menu;
 	vector<string> row;
 	string line, word;
@@ -29,22 +29,24 @@ using namespace std;
 			Menu.push_back(row);
 		}
 	}
+	bool stoper=false;
 	for (int i = 0; i < Menu.size(); i++)
 	{
 		for (int j = 0; j < Menu[i].size(); j++)
 		{
-			if (Menu[i][0] == id) {
+			if (Menu[i][0] == id && !stoper) {
 				cout << Menu[i][0] << Menu[i][1] << Menu[i][2] << 1 << endl;
+				stoper=true;
 			}
 			
 		}
 		cout << "\n" << endl;
 	}
 }
-*/
+
 
 void pickFromMenu() {
-	//string id;
+	string id;
 	cout << "Menu: " << endl;
 	
 	vector<vector<string>> Menu;
@@ -74,12 +76,12 @@ void pickFromMenu() {
 		cout << "\n" << endl;
 	}
 
-	   //vector<string> splitedArray = splitString(line, ';');
+	   vector<string> splitedArray = splitString(line, ';');
 	
 	   
-	   //cout << "Proszê wybrac danie: " << endl;
-	   //cin >> id;
-	   //addProductToCart(id);
+	   cout << "Proszê wybrac danie: " << endl;
+	   cin >> id;
+	   addProductToCart(id);
 
 	
 	
