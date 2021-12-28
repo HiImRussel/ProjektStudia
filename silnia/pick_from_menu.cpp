@@ -14,7 +14,7 @@ using namespace std;
 
 vector<Order> cart_array;
 
-void addProductToCart(string id, int quanity) {
+void addProductToCart(string id, int quantity) {
 	vector<vector<string>> Menu;
 	vector<string> row;
 	string line, word;
@@ -39,14 +39,14 @@ void addProductToCart(string id, int quanity) {
 		for (int j = 0; j < Menu[i].size(); j++)
 		{
 			if (Menu[i][0] == id && !stoper) {
-				string idd = Menu[i][0];
+				string product_id = Menu[i][0];
 				string name = Menu[i][1];
 				float price = stof(Menu[i][2]);
-				int quanity = quanity;
+				int product_quantity = quantity;
 
 				stoper = true;
 
-				cart_array.push_back(Order(idd, name, price, quanity));
+				cart_array.push_back(Order(product_id, name, price, product_quantity));
 			}
 		}
 		cout << "\n" << endl;
@@ -60,7 +60,7 @@ void setQuantity(string id) {
 		cin >> quanity;
 
 		if(quanity > 0) {
-			addProductToCart(id,quanity);
+			addProductToCart(id, quanity);
 		}
 		else {
 			system("cls");

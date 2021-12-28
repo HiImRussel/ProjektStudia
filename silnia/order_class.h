@@ -11,13 +11,13 @@ public:
     string id;
     string name;
     float price;
-    int quanity;
+    int quantity;
 
-    Order(string id, string name, float price, int quanity) {
+    Order(string id, string name, float price, int quantity) {
         this->id = id;
         this->name = name;
         this->price = price;
-        this->quanity = quanity;
+        this->quantity = quantity;
     }
 };
 
