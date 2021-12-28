@@ -6,6 +6,7 @@
 #include <vector>
 #include "order_class.h"
 #include <sstream>
+#include "global_variables.h"
 
 using namespace std;
 
@@ -42,7 +43,8 @@ void addProductToCart(string id) {
 
 				Order newOrder(idd, name, price, quantity);
 				stoper=true;
-				cout << newOrder.name << endl;
+				cart_array.push_back(newOrder);
+
 			}
 		}
 		cout << "\n" << endl;
