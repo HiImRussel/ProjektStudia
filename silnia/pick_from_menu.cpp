@@ -53,22 +53,30 @@ void addProductToCart(string id, int quantity) {
 	}
 }
 
+void editCart() {
+	system("cls");
+	cout << "Koszyk: " << endl;
+	for (int i = 0; i < cart_array.size(); i++) {
+		cout << "Danie: " << cart_array[i].name << ";  Ilosc porcji:  " << cart_array[i].quantity << endl;
+	}
+}
+
 void setQuantity(string id) {
-	int quanity;
+	int quantity;
 	do {
 		cout <<"Podaj ilosc porcji : "<<endl;
-		cin >> quanity;
+		cin >> quantity;
 
-		if(quanity > 0) {
-			addProductToCart(id, quanity);
+		if(quantity > 0) {
+			addProductToCart(id, quantity);
 		}
 		else {
 			system("cls");
 			cout << "Ilosc musi byc wieksza od 0" << endl;
 		}
-	} while (quanity <= 0);
+	} while (quantity <= 0);
 }
-
+//void removeFromCart(){
 
 void pickFromMenu() {
 	string id;
@@ -105,10 +113,19 @@ void pickFromMenu() {
 			cout << "\n" << endl;
 		}
 
-		cout << "[0]. Next step" << endl;
-
+		cout << "[-]. Next step" << endl;
+		cout << "[+]. Edytuj koszyk" << endl;
 		cout << "Prosze wybrac danie: " << endl;
 		cin >> id;
+
+		if (id == "+") {
+			addProductToCart();
+		}
+		else if (id == "-") {
+			editCart();
+		}
+		
+
 
 		if (id != "0") {
 			setQuantity(id);
@@ -120,6 +137,6 @@ void pickFromMenu() {
 	//Order newOrder(0,"name_of_order",7.55,1);
 
 	//cout << "new order name:"<< newOrder.name;
-
+	
 	checkout();
 }
