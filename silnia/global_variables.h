@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -15,3 +16,4 @@ extern string working_days_to;
 
 extern string weekend_days_from;
 extern string weekend_days_to;
+extern vector<> cart_array;
