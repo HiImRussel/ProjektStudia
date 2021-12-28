@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
+#include "global_variables.h"
 
 using namespace std;
 
 void checkout() {
-	cout << "checkout" << endl;
+	for (int i = 0;i < cart_array.size();i++) {
+		cout << cart_array[i].name << endl;
+	}
 }
