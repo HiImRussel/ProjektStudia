@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include "order_class.h"
 
 using namespace std;
 
@@ -16,4 +17,4 @@ extern string working_days_to;
 
 extern string weekend_days_from;
 extern string weekend_days_to;
-extern vector<> cart_array;
+extern vector<Order> cart_array;
