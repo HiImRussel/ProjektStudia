@@ -31,3 +31,4 @@ int* splitAndConvertStringToNumbers(string string_to_convert) {
 
     return array_to_return;
 }
+
