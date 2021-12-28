@@ -1,4 +1,5 @@
 #include "split_and_convert_string_to_number.h"
+#include "split_string_by_separator.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -8,14 +9,7 @@ using namespace std;
 
 int* splitAndConvertStringToNumbers(string string_to_convert) {
 
-    const char separator = ':';
-    vector<string> outputArray;
-    stringstream streamData(string_to_convert);
-    string val;
-    while (std::getline(streamData, val, separator)) {
-        string string_value = val;
-        outputArray.push_back(val);
-    }
+    vector<string> outputArray = splitString(string_to_convert, ':');
 
     int array_to_return[2] = {};
 

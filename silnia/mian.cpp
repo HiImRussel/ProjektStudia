@@ -86,6 +86,8 @@ int main()
                 }
 
             } while (!canBeDelivered(delivery_hour));
+
+            system("cls");
             
             pickFromMenu();
 
