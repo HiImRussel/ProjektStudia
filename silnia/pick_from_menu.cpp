@@ -35,13 +35,19 @@ void addProductToCart(string id) {
 		for (int j = 0; j < Menu[i].size(); j++)
 		{
 			if (Menu[i][0] == id && !stoper) {
-				cout << Menu[i][0] << Menu[i][1] << Menu[i][2] << 1 << endl;
+				string idd=Menu[i][0];
+				string name= Menu[i][1];
+				float price= stof(Menu[i][2]);
+				int quantity=1;
+
+				Order newOrder(idd, name, price, quantity);
 				stoper=true;
+				cout << newOrder.name << endl;
 			}
-			
 		}
 		cout << "\n" << endl;
 	}
+	
 }
 
 
@@ -82,6 +88,8 @@ void pickFromMenu() {
 	   cout << "Proszê wybrac danie: " << endl;
 	   cin >> id;
 	   addProductToCart(id);
+
+
 
 	
 	
