@@ -18,10 +18,20 @@ vector<Order> cart_array;
 void addProductToCart(string id, int quantity) {
 	Order* newOrder = searchForItemInMenu(id, quantity);
 
-	if (newOrder != NULL) {
+	bool isItemInCart = false;
+
+	for (int i = 0; i < cart_array.size(); i++) {
+		if (cart_array[i].id == id) {
+			cart_array[i].quantity += quantity;
+			isItemInCart = true;
+		}
+	}
+
+	if (newOrder != NULL && !isItemInCart) {
 		cart_array.push_back(Order(newOrder->id, newOrder->name, newOrder->price, newOrder->quantity));
 	}
-	else {
+
+	if(newOrder == NULL) {
 		system("cls");
 
 		cout << "W menu nie znaleziono produktu o podanym identyfikatorze" << endl;
