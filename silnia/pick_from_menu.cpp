@@ -143,7 +143,14 @@ void pickFromMenu() {
 			}
 			cout << "\n" << endl;
 		}
+		void cartValue(); {
+		float total_cart_value = 0;
+		for (int i = 0; i < cart_array.size(); i++) {
 
+			total_cart_value += cart_array[i].price * cart_array[i].quantity;
+			}
+		cout << "wartosc koszyka: " << total_cart_value;
+		}
 		cout << "[+]. Edytuj koszyk" << endl;
 		cout << "[-]. Next step" << endl;
 
