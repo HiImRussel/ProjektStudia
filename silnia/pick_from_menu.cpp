@@ -1,58 +1,27 @@
 ﻿#include <iostream>
 #include <string>
-#include "checkout.h"
-#include <fstream>
-#include "split_string_by_separator.h"
-#include <vector>
-#include "order_class.h"
 #include <sstream>
+#include <vector>
+#include <fstream>
+
+#include "checkout.h"
+#include "split_string_by_separator.h"
+#include "order_class.h"
 #include "global_variables.h"
 #include "order_class.h"
+#include "search_for_item_in_menu.h"
 
 using namespace std;
-
 
 vector<Order> cart_array;
 
 void addProductToCart(string id, int quantity) {
-	vector<vector<string>> Menu;
-	vector<string> row;
-	string line, word;
+	Order* newOrder = searchForItemInMenu(id, quantity);
 
-	fstream file("menu.csv");
-	if (file.is_open())
-	{
-		while (getline(file, line))
-		{
-			row.clear();
-
-			std::stringstream str(line);
-
-			while (getline(str, word, ','))
-				row.push_back(word);
-			Menu.push_back(row);
-		}
+	if (newOrder != NULL) {
+		cart_array.push_back(Order(newOrder->id, newOrder->name, newOrder->price, newOrder->quantity));
 	}
-	bool is_item_found = false;
-	for (int i = 0; i < Menu.size(); i++)
-	{
-		for (int j = 0; j < Menu[i].size(); j++)
-		{
-			if (Menu[i][0] == id && !is_item_found) {
-				string product_id = Menu[i][0];
-				string name = Menu[i][1];
-				float price = stof(Menu[i][2]);
-				int product_quantity = quantity;
-
-				is_item_found = true;
-
-				cart_array.push_back(Order(product_id, name, price, product_quantity));
-			}
-		}
-		cout << "\n" << endl;
-	}
-
-	if (!is_item_found) {
+	else {
 		system("cls");
 
 		cout << "W menu nie znaleziono produktu o podanym identyfikatorze" << endl;
@@ -87,7 +56,7 @@ void editCart() {
 		if (cart_array.size() > 0) {
 			cout << "Koszyk: " << endl;
 			for (int i = 0; i < cart_array.size(); i++) {
-				cout << i+1 << ". " << "Danie: " << cart_array[i].name << "  Ilosc porcji:  " << cart_array[i].quantity << " Cena: " << cart_array[i].price * cart_array[i].quantity << endl;
+				cout << i+1 << ". " << "Danie: " << cart_array[i].name << " Ilosc porcji: " << cart_array[i].quantity << " Cena za pojedyncze danie: "<< cart_array[i].price << " Cena za wszystkie porcje dania: " << cart_array[i].price * cart_array[i].quantity << endl;
 			}
 		}
 		else {
@@ -107,6 +76,7 @@ void editCart() {
 
 void setQuantity(string id) {
 	int quantity;
+
 	do {
 		system("cls");
 
@@ -144,7 +114,7 @@ void pickFromMenu() {
 
 				std::stringstream str(line);
 
-				while (getline(str, word, ','))
+				while (getline(str, word, ';'))
 					row.push_back(word);
 				Menu.push_back(row);
 			}
@@ -153,6 +123,12 @@ void pickFromMenu() {
 		{
 			for (int j = 0; j < Menu[i].size(); j++)
 			{
+				if (j == 2) {
+					cout << "Cena: ";
+				}
+				else if (j==3) {
+					cout << "Skladniki: ";
+				}
 				cout << Menu[i][j] << " ";
 			}
 			cout << "\n" << endl;
@@ -170,12 +146,8 @@ void pickFromMenu() {
 		if (id != "-" && id != "+") {
 			setQuantity(id);
 		}
+
 	} while (id != "-");
-
-
-	//Order newOrder(0,"name_of_order",7.55,1);
-
-	//cout << "new order name:"<< newOrder.name;
 	
 	checkout();
 }

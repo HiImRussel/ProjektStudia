@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 #include "global_variables.h"
 
 using namespace std;

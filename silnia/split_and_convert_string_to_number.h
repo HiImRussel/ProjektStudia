@@ -1,5 +1,6 @@
 #ifndef CONVERT_STRING_TO_NUMBER_H
 #define CONVERT_STRING_TO_NUMBER_H
+
 #include <string>
 
 using namespace std;

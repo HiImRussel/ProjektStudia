@@ -142,6 +142,7 @@
     <ClCompile Include="checkout.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="can_be_delivered.cpp" />
+    <ClCompile Include="search_for_item_in_menu.cpp" />
     <ClCompile Include="split_and_convert_string_to_number.cpp" />
     <ClCompile Include="global_varaibles.cpp" />
     <ClCompile Include="pick_from_menu.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="global_variables.h" />
     <ClInclude Include="can_be_delivered.h" />
     <ClInclude Include="order_class.h" />
+    <ClInclude Include="search_for_item_in_menu.h" />
     <ClInclude Include="split_string_by_separator.h" />
     <ClInclude Include="pick_from_menu.h" />
     <ClInclude Include="split_and_convert_string_to_number.h" />
