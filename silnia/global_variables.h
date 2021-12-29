@@ -18,4 +18,6 @@ extern string working_days_to;
 
 extern string weekend_days_from;
 extern string weekend_days_to;
+
+//cart
 extern vector<Order> cart_array;

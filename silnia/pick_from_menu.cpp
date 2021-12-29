@@ -137,7 +137,7 @@ void pickFromMenu() {
 		cout << "[+]. Edytuj koszyk" << endl;
 		cout << "[-]. Next step" << endl;
 
-		cout << "Prosze wybrac danie: ";
+		cout << "Prosze wybrac danie lub akcje: ";
 		cin >> id;
 
 		if (id == "+") {

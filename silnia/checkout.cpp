@@ -7,5 +7,5 @@ using namespace std;
 
 void checkout() {
 	system("cls");
-	cout << "checkout: " << endl;
+	cout << "checkout";
 }
