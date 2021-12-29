@@ -6,11 +6,8 @@
 
 using namespace std;
 
-string user_name;
-string user_surname;
-int table_number;
-int delivery_type;
-string delivery_hour;
+string user_name, user_surname, delivery_hour, city, street, house_number;
+int table_number, delivery_type;
 
 int main()
 {
@@ -65,6 +62,25 @@ int main()
                 pickFromMenu();
             break;
         case 2:
+            do {
+                cout << "Wprowadz miasto, do ktorego mamy wyslac zamowienie: ";
+                cin >> city;
+            } while (city.length() <= 0);
+
+            system("cls");
+
+            do {
+                cout << "Wprowadz ulice, na ktora mamy wyslac zamowienie: ";
+                cin >> street;
+            } while (street.length() <= 0);
+
+            system("cls");
+
+            do {
+                cout << "Wprowadz numer domu, na ktory mamy wyslac zamowienie: ";
+                cin >> house_number;
+            } while (house_number.length() <= 0);
+
             do {
                 cout << "Godziny pracy restauracji:" << endl;
                 cout << "Pn-Pt: " << working_days_from << " - " << working_days_to << endl;

@@ -10,6 +10,7 @@
 #include "global_variables.h"
 #include "order_class.h"
 #include "search_for_item_in_menu.h"
+#include "get_cart_value.h"
 
 using namespace std;
 
@@ -47,7 +48,9 @@ void removeFromCart(string index) {
 	int strAsInt;
 	ss >> strAsInt;
 
-	cart_array.erase(cart_array.begin() + (strAsInt - 1));
+	if (strAsInt > 0) {
+		cart_array.erase(cart_array.begin() + (strAsInt - 1));
+	}
 
 	if (prevCartSize == cart_array.size()) {
 		system("cls");
@@ -63,6 +66,7 @@ void editCart() {
 
 	do {
 		system("cls");
+
 		if (cart_array.size() > 0) {
 			cout << "Koszyk: " << endl;
 			for (int i = 0; i < cart_array.size(); i++) {
@@ -143,14 +147,11 @@ void pickFromMenu() {
 			}
 			cout << "\n" << endl;
 		}
-		void cartValue(); {
-		float total_cart_value = 0;
-		for (int i = 0; i < cart_array.size(); i++) {
 
-			total_cart_value += cart_array[i].price * cart_array[i].quantity;
-			}
-		cout << "wartosc koszyka: " << total_cart_value;
-		}
+		cout << "Aktualna wartosc koszyka: " << getCartValue() << " zl" << endl;
+
+		cout << endl;
+
 		cout << "[+]. Edytuj koszyk" << endl;
 		cout << "[-]. Next step" << endl;
 
@@ -160,11 +161,25 @@ void pickFromMenu() {
 		if (id == "+") {
 			editCart();
 		}
+
 		if (id != "-" && id != "+") {
 			setQuantity(id);
 		}
 
-	} while (id != "-");
+		if (id == "-" && cart_array.size() == 0) {
+			system("cls");
+
+			cout << "Musisz wybrac danie aby przejsc dalej" << endl;
+
+			cin.get();
+			cin.get();
+		}
+
+		if (id == "-" && cart_array.size() > 0) {
+			break;
+		}
+
+	} while (true);
 	
 	checkout();
 }

@@ -5,11 +5,15 @@
 
 using namespace std;
 
+//order data
 extern string user_name;
 extern string user_surname;
 extern int table_number;
-extern int delivery_type;
+extern int delivery_type; // 1 -> at restaurant location, 2 -> delivery to user
 extern string delivery_hour;
+extern string city;
+extern string street;
+extern string house_number;
 
 
 //restaurant open hours varaible

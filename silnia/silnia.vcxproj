@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="checkout.cpp" />
+    <ClCompile Include="get_cart_value.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="can_be_delivered.cpp" />
     <ClCompile Include="search_for_item_in_menu.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="checkout.h" />
+    <ClInclude Include="get_cart_value.h" />
     <ClInclude Include="global_variables.h" />
     <ClInclude Include="can_be_delivered.h" />
     <ClInclude Include="order_class.h" />
