@@ -5,4 +5,4 @@ using namespace std;
 
 bool canFoodBeDeliveredAtPickedTime();
 
-#endif#pragma once
+#endif
