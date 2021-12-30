@@ -8,5 +8,5 @@ using namespace std;
 
 void checkout() {
 	system("cls");
-	cout << "checkout";
+	cout << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min";
 }

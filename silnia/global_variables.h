@@ -25,3 +25,6 @@ extern string weekend_days_to;
 
 //cart
 extern vector<Order> cart_array;
+
+//delivery time per dish
+extern int making_time_per_dish;
