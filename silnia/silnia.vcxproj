@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="can_food_be_delivered_at_picked_time.cpp" />
     <ClCompile Include="checkout.cpp" />
     <ClCompile Include="get_cart_value.cpp" />
     <ClCompile Include="mian.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="split_string_by_separator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="can_food_be_delivered_at_picked_time.h" />
     <ClInclude Include="checkout.h" />
     <ClInclude Include="get_cart_value.h" />
     <ClInclude Include="global_variables.h" />

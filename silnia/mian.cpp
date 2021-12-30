@@ -81,6 +81,8 @@ int main()
                 cin >> house_number;
             } while (house_number.length() <= 0);
 
+            system("cls");
+
             do {
                 cout << "Godziny pracy restauracji:" << endl;
                 cout << "Pn-Pt: " << working_days_from << " - " << working_days_to << endl;
