@@ -8,6 +8,7 @@
 #include "pick_from_menu.h"
 
 using namespace std;
+string confirm;
 
 void checkout() {
 	system("cls");
@@ -29,6 +30,7 @@ void checkout() {
 
 	switch (delivery_type)
 	{
+
 	case 1:
 		cout << "Numer stolika: " << table_number << endl << endl;
 	break;
@@ -49,7 +51,21 @@ void checkout() {
 		}
 	}
 	
-	cout << endl << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min";
+	cout << endl << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min" << endl;
+
+	cout << "[+]. Wroc do zamowienia" << endl;
+	cout << "[-]. Potwierdz zamowienie" << endl;
+
+	cout << "Prosze wybrac akcje: ";
+	cin >> confirm;
+
+	if (confirm == "+") {
+		pickFromMenu();
+	}
+
+	//if (confirm == "-") {
+	//	pickFromMenu(); Zapisz do pliku txt
+	//}
 	
 
 
