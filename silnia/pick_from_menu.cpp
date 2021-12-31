@@ -89,7 +89,7 @@ void editCart() {
 }
 
 void setQuantity(string id) {
-	int quantity;
+	int quantity = 0;
 
 	do {
 		system("cls");
