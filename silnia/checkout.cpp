@@ -52,6 +52,7 @@ void checkout() {
 	}
 	
 	cout << endl << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min" << endl;
+	cout << endl << "Do zaplaty: " << getCartValue() << " zl" << endl << endl;
 
 	cout << "[+]. Wroc do zamowienia" << endl;
 	cout << "[-]. Potwierdz zamowienie" << endl;
