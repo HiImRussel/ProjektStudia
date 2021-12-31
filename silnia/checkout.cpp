@@ -13,14 +13,16 @@ string confirm;
 void checkout() {
 	system("cls");
 
-	if (!canFoodBeDeliveredAtPickedTime() && delivery_type == 2) {
-		cout << "Nie mozemy zrealizowac z zamowienia w wyznaczonym czasie. Prosze zedytowac swoje zamowienie" << endl;
-		cin.get();
-		cin.get();
+	if (delivery_type == 2) {
+		if (!canFoodBeDeliveredAtPickedTime()) {
+			cout << "Nie mozemy zrealizowac z zamowienia w wyznaczonym czasie. Prosze zedytowac swoje zamowienie" << endl;
+			cin.get();
+			cin.get();
 
-		pickFromMenu();
+			pickFromMenu();
 
-		exit;
+			exit;
+		}
 	}
 
 	cout << "----------------------------" << endl << "|  Podsumowanie zamowienia  | " << endl << "----------------------------" << endl;
