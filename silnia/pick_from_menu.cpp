@@ -11,6 +11,7 @@
 #include "order_class.h"
 #include "search_for_item_in_menu.h"
 #include "get_cart_value.h"
+#include "print_cart_items.h"
 
 using namespace std;
 
@@ -67,15 +68,8 @@ void editCart() {
 	do {
 		system("cls");
 
-		if (cart_array.size() > 0) {
-			cout << "Koszyk: " << endl;
-			for (int i = 0; i < cart_array.size(); i++) {
-				cout << i+1 << ". " << "Danie: " << cart_array[i].name << " Ilosc porcji: " << cart_array[i].quantity << " Cena za pojedyncze danie: "<< cart_array[i].price << " Cena za wszystkie porcje dania: " << cart_array[i].price * cart_array[i].quantity << endl;
-			}
-		}
-		else {
-			cout << "Brak dan w koszyku" << endl;
-		}
+		cout << "Koszyk: " << endl;
+		printCartItems();
 
 		cout << "[-]. Wroc" << endl;
 

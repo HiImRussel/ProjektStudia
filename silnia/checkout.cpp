@@ -6,6 +6,7 @@
 #include "planned_waiting_time.h"
 #include "can_food_be_delivered_at_picked_time.h"
 #include "pick_from_menu.h"
+#include "print_cart_items.h"
 
 using namespace std;
 string confirm;
@@ -48,9 +49,7 @@ void checkout() {
 
 	if (cart_array.size() > 0) {
 		cout << "Zamowione dania: " << endl;
-		for (int i = 0; i < cart_array.size  (); i++) {
-			cout << i + 1 << ". " << "Danie: " << cart_array[i].name << " Ilosc porcji: " << cart_array[i].quantity << " Cena za pojedyncze danie: " << cart_array[i].price << " Cena za wszystkie porcje dania: " << cart_array[i].price * cart_array[i].quantity << endl;
-		}
+		printCartItems();
 	}
 	
 	cout << endl << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min" << endl;

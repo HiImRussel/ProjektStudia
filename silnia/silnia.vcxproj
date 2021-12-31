@@ -145,6 +145,7 @@
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="can_be_delivered.cpp" />
     <ClCompile Include="planned_waiting_time.cpp" />
+    <ClCompile Include="print_cart_items.cpp" />
     <ClCompile Include="search_for_item_in_menu.cpp" />
     <ClCompile Include="split_and_convert_string_to_number.cpp" />
     <ClCompile Include="global_varaibles.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="can_be_delivered.h" />
     <ClInclude Include="order_class.h" />
     <ClInclude Include="planned_waiting_time.h" />
+    <ClInclude Include="print_cart_items.h" />
     <ClInclude Include="search_for_item_in_menu.h" />
     <ClInclude Include="split_string_by_separator.h" />
     <ClInclude Include="pick_from_menu.h" />
