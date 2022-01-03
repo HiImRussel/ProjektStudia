@@ -139,19 +139,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="can_food_be_delivered_at_picked_time.cpp" />
     <ClCompile Include="checkout.cpp" />
+    <ClCompile Include="get_cart_value.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="can_be_delivered.cpp" />
+    <ClCompile Include="planned_waiting_time.cpp" />
+    <ClCompile Include="print_cart_items.cpp" />
+    <ClCompile Include="search_for_item_in_menu.cpp" />
     <ClCompile Include="split_and_convert_string_to_number.cpp" />
     <ClCompile Include="global_varaibles.cpp" />
     <ClCompile Include="pick_from_menu.cpp" />
+    <ClCompile Include="split_string_by_separator.cpp" />
+    <ClCompile Include="write_file.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="can_food_be_delivered_at_picked_time.h" />
     <ClInclude Include="checkout.h" />
+    <ClInclude Include="get_cart_value.h" />
     <ClInclude Include="global_variables.h" />
     <ClInclude Include="can_be_delivered.h" />
+    <ClInclude Include="order_class.h" />
+    <ClInclude Include="planned_waiting_time.h" />
+    <ClInclude Include="print_cart_items.h" />
+    <ClInclude Include="search_for_item_in_menu.h" />
+    <ClInclude Include="split_string_by_separator.h" />
     <ClInclude Include="pick_from_menu.h" />
     <ClInclude Include="split_and_convert_string_to_number.h" />
+    <ClInclude Include="write_file.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,15 +1,13 @@
 ﻿#include <iostream>
+
 #include "global_variables.h"
 #include "can_be_delivered.h"
 #include "pick_from_menu.h"
 
 using namespace std;
 
-string user_name;
-string user_surname;
-int table_number;
-int delivery_type;
-string delivery_hour;
+string user_name, user_surname, delivery_hour, city, street, house_number;
+int table_number, delivery_type;
 
 int main()
 {
@@ -56,22 +54,35 @@ int main()
 
         switch (delivery_type) {
         case 1:
-            do {
                 cout << "Prosze podac number stolika: ";
                 cin >> table_number;
+                
+                system("cls");
 
-                if (!isdigit(table_number)) {
-                    cout << endl;
-
-                    cout << "Prosze wprowadzic odpowiedni numer stolika" << endl;
-                    
-                    cin.get();
-                    cin.get();
-                }
-
-            } while (!isdigit(table_number));
+                pickFromMenu();
             break;
         case 2:
+            do {
+                cout << "Wprowadz miasto, do ktorego mamy wyslac zamowienie: ";
+                cin >> city;
+            } while (city.length() <= 0);
+
+            system("cls");
+
+            do {
+                cout << "Wprowadz ulice, na ktora mamy wyslac zamowienie: ";
+                cin >> street;
+            } while (street.length() <= 0);
+
+            system("cls");
+
+            do {
+                cout << "Wprowadz numer domu, na ktory mamy wyslac zamowienie: ";
+                cin >> house_number;
+            } while (house_number.length() <= 0);
+
+            system("cls");
+
             do {
                 cout << "Godziny pracy restauracji:" << endl;
                 cout << "Pn-Pt: " << working_days_from << " - " << working_days_to << endl;
@@ -94,6 +105,8 @@ int main()
                 }
 
             } while (!canBeDelivered(delivery_hour));
+
+            system("cls");
             
             pickFromMenu();
 
