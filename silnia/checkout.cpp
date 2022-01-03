@@ -7,6 +7,7 @@
 #include "can_food_be_delivered_at_picked_time.h"
 #include "pick_from_menu.h"
 #include "print_cart_items.h"
+#include "write_file.h"
 
 using namespace std;
 string confirm;
@@ -52,8 +53,8 @@ void checkout() {
 		printCartItems();
 	}
 	
-	cout << endl << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min" << endl;
-	cout << endl << "Do zaplaty: " << getCartValue() << " zl" << endl << endl;
+	cout << endl << "Planowany czas przygotowania dan: " << plannedWaitingTime() << " min" << endl << endl;
+	cout << "Do zaplaty: " << getCartValue() << " zl" << endl << endl;
 
 	cout << "[+]. Wroc do zamowienia" << endl;
 	cout << "[-]. Potwierdz zamowienie" << endl;
@@ -65,9 +66,17 @@ void checkout() {
 		pickFromMenu();
 	}
 
-	//if (confirm == "-") {
-	//	pickFromMenu(); Zapisz do pliku txt
-	//}
+	else if (confirm == "-") {
+		writeFile();
+	}
+
+	else {
+		system("cls");
+		cout << "Wybrana akcja nie istnieje!" << endl;
+		cin.get();
+		cin.get();
+		checkout();
+	}
 	
 
 

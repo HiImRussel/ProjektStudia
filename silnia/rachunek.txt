@@ -1,0 +1,16 @@
+Imie: Jakub
+Nazwisko: Samotyja
+
+Zamówione dania: 
+Adres: 
+Poznan
+Ulica 3
+
+Planowane dostarczenie na godzine: 19:30
+
+1. Danie: Pizza margharitta Ilosc porcji: 3 Cena za pojedyncze danie: 15 zl Cena za wszystkie porcje dania: 45 zl
+
+Planowany czas przygotowania dan: 30 min
+
+Do zaplaty: 45 zl
+

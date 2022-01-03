@@ -151,6 +151,7 @@
     <ClCompile Include="global_varaibles.cpp" />
     <ClCompile Include="pick_from_menu.cpp" />
     <ClCompile Include="split_string_by_separator.cpp" />
+    <ClCompile Include="write_file.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="can_food_be_delivered_at_picked_time.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="split_string_by_separator.h" />
     <ClInclude Include="pick_from_menu.h" />
     <ClInclude Include="split_and_convert_string_to_number.h" />
+    <ClInclude Include="write_file.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
