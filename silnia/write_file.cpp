@@ -13,7 +13,6 @@ void writeFile()
 	myfile.open("rachunek.txt");
 	myfile << "Imie: " << user_name << endl;
 	myfile << "Nazwisko: " << user_surname << endl << endl;
-	myfile << "Zamówione dania: " << endl;
 
 	switch (delivery_type)
 	{
@@ -31,7 +30,7 @@ void writeFile()
 		break;
 	}
 
-	//myfile << "Zamówione dania: " << printCartItems() << endl; ???
+	myfile << "Zamówione dania: " << endl;
 	for (int i = 0; i < cart_array.size(); i++) {
 		myfile << i + 1 << ". " << "Danie: " << cart_array[i].name << " Ilosc porcji: " << cart_array[i].quantity << " Cena za pojedyncze danie: " << cart_array[i].price << " zl" << " Cena za wszystkie porcje dania: " << cart_array[i].price * cart_array[i].quantity << " zl" << endl;
 	}
