@@ -18,6 +18,7 @@ using namespace std;
 vector<Order> cart_array;
 
 void addProductToCart(string index, int quantity) {
+	//get item data form menu
 	Order* newOrder = searchForItemInMenu(index, quantity);
 
 	if (newOrder == NULL) {
@@ -30,6 +31,7 @@ void addProductToCart(string index, int quantity) {
 	else {
 		bool isItemInCart = false;
 
+		//check if picked item is in cart
 		for (int i = 0; i < cart_array.size(); i++) {
 			if (cart_array[i].id == newOrder->id) {
 				cart_array[i].quantity += quantity;
@@ -37,6 +39,7 @@ void addProductToCart(string index, int quantity) {
 			}
 		}
 
+		//if picked item is not in cart add it to it
 		if (newOrder != NULL && !isItemInCart) {
 			cart_array.push_back(Order(newOrder->id, newOrder->name, newOrder->price, newOrder->quantity));
 		}
@@ -54,6 +57,7 @@ void removeFromCart(string index) {
 		cart_array.erase(cart_array.begin() + (strAsInt - 1));
 	}
 
+	//if item is not delete handle error
 	if (prevCartSize == cart_array.size()) {
 		system("cls");
 
@@ -114,6 +118,7 @@ void pickFromMenu() {
 		vector<string> row;
 		string line, word;
 
+		//print menu items
 		fstream file("menu.csv");
 		if (file.is_open())
 		{
@@ -138,6 +143,7 @@ void pickFromMenu() {
 				index++;
 			}
 		}
+		//add external description before price and ingredients
 		for (int i = 0; i < Menu.size(); i++)
 		{
 			for (int j = 0; j < Menu[i].size(); j++)
@@ -180,6 +186,7 @@ void pickFromMenu() {
 			cin.get();
 		}
 
+		//if user want to go to next step check if is he having some items in cart
 		if (id == "-" && cart_array.size() > 0) {
 			break;
 		}

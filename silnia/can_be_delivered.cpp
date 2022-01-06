@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//function check if food can be delivered in picked hour on current day and in working hours
 bool checkIfCanBeDelivered(int picked_hour, int picked_minutes, int hours_from, int minutes_from, int hours_to, int minutes_to){
     if (picked_hour >= hours_from && picked_hour <= hours_to) {
         if (picked_hour == hours_to && picked_minutes > minutes_to) return false;
@@ -21,6 +22,7 @@ bool checkIfCanBeDelivered(int picked_hour, int picked_minutes, int hours_from, 
 }
 
 bool canBeDelivered(string delivery_hour) {
+    //getting current time and date
     time_t rawtime;
     tm* timeinfo;
     time(&rawtime);
@@ -31,6 +33,7 @@ bool canBeDelivered(string delivery_hour) {
     int current_hour = timeinfo->tm_hour;
     int current_minutes = timeinfo->tm_min;
 
+    //picked delivery hour must be a 5 character long string and current day must be other than Sunday
     if (delivery_hour.length() != 5 || weekday == 7) return false;
 
     //checking if can be delivered in working days

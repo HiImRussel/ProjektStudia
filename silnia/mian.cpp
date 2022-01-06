@@ -10,6 +10,7 @@ using namespace std;
 string user_name, user_surname, delivery_hour, city, street, house_number;
 int table_number, delivery_type;
 
+//funcion that handle esc press
 DWORD WINAPI CheckEscape(LPVOID lpParam) {
     while (GetAsyncKeyState(VK_ESCAPE) == 0) {
     }
@@ -24,6 +25,7 @@ DWORD WINAPI CheckEscape(LPVOID lpParam) {
 
 int main()
 {
+    //create thread for chandling esc click and exit app after that
     CreateThread(NULL, 0, CheckEscape, NULL, 0, NULL);
 
     cout << "Restauracja u Eryka, Mateusza, Jakuba i Jakuba" << endl;
