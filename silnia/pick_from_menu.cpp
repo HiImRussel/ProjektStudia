@@ -48,22 +48,34 @@ void addProductToCart(string index, int quantity) {
 
 void removeFromCart(string index) {
 	int prevCartSize = cart_array.size();
-	
-	stringstream ss(index);
-	int strAsInt;
-	ss >> strAsInt;
 
-	if (strAsInt > 0) {
-		cart_array.erase(cart_array.begin() + (strAsInt - 1));
-	}
-
-	//if item is not delete handle error
-	if (prevCartSize == cart_array.size()) {
+	if (prevCartSize == 0) {
 		system("cls");
 
-		cout << "Produktu o podanym identyfikatorze nie ma w koszyku" << endl;
+		cout << "Koszyk jest pusty" << endl;
+
 		cin.get();
 		cin.get();
+
+	}
+	else {
+
+		stringstream ss(index);
+		int strAsInt;
+		ss >> strAsInt;
+
+		if (strAsInt > 0) {
+			cart_array.erase(cart_array.begin() + (strAsInt - 1));
+		}
+
+		//if item is not delete handle error
+		if (prevCartSize == cart_array.size()) {
+			system("cls");
+
+			cout << "Produktu o podanym identyfikatorze nie ma w koszyku" << endl;
+			cin.get();
+			cin.get();
+		}
 	}
 }
 
