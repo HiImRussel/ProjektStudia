@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <windows.h>
 
 #include "global_variables.h"
 #include "can_be_delivered.h"
@@ -9,8 +10,22 @@ using namespace std;
 string user_name, user_surname, delivery_hour, city, street, house_number;
 int table_number, delivery_type;
 
+DWORD WINAPI CheckEscape(LPVOID lpParam) {
+    while (GetAsyncKeyState(VK_ESCAPE) == 0) {
+    }
+
+    system("cls");
+
+    cout << "Dziekujemy za skorzystanie z aplikacji. Do zobaczenia!" << endl;
+
+    exit(0);
+
+}
+
 int main()
 {
+    CreateThread(NULL, 0, CheckEscape, NULL, 0, NULL);
+
     cout << "Restauracja u Eryka, Mateusza, Jakuba i Jakuba" << endl;
     cout << "Adres:" << endl;
     cout << "Miasto: XYZ" << endl;
