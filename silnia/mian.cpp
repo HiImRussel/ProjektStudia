@@ -38,9 +38,8 @@ int main()
 
     } while (user_name.length() <= 0 || user_surname.length() <= 0);
 
-    system("cls");
-
     do {
+        system("cls");
         cout << "Dostepne metody dostawy:" << endl;
         cout << "1) Odbior na miejscu" << endl;
         cout << "2) Dostawa do domu" << endl;

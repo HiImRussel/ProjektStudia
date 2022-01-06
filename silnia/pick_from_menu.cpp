@@ -17,28 +17,29 @@ using namespace std;
 
 vector<Order> cart_array;
 
-void addProductToCart(string id, int quantity) {
-	Order* newOrder = searchForItemInMenu(id, quantity);
+void addProductToCart(string index, int quantity) {
+	Order* newOrder = searchForItemInMenu(index, quantity);
 
-	bool isItemInCart = false;
-
-	for (int i = 0; i < cart_array.size(); i++) {
-		if (cart_array[i].id == id) {
-			cart_array[i].quantity += quantity;
-			isItemInCart = true;
-		}
-	}
-
-	if (newOrder != NULL && !isItemInCart) {
-		cart_array.push_back(Order(newOrder->id, newOrder->name, newOrder->price, newOrder->quantity));
-	}
-
-	if(newOrder == NULL) {
+	if (newOrder == NULL) {
 		system("cls");
 
-		cout << "W menu nie znaleziono produktu o podanym identyfikatorze" << endl;
+		cout << "W menu nie znaleziono dania o podanym numerze" << endl;
 		cin.get();
 		cin.get();
+	}
+	else {
+		bool isItemInCart = false;
+
+		for (int i = 0; i < cart_array.size(); i++) {
+			if (cart_array[i].id == newOrder->id) {
+				cart_array[i].quantity += quantity;
+				isItemInCart = true;
+			}
+		}
+
+		if (newOrder != NULL && !isItemInCart) {
+			cart_array.push_back(Order(newOrder->id, newOrder->name, newOrder->price, newOrder->quantity));
+		}
 	}
 }
 
@@ -82,7 +83,7 @@ void editCart() {
 	} while (index_of_an_item != "-");
 }
 
-void setQuantity(string id) {
+void setQuantity(string index) {
 	int quantity = 0;
 
 	do {
@@ -92,7 +93,7 @@ void setQuantity(string id) {
 		cin >> quantity;
 
 		if(quantity > 0) {
-			addProductToCart(id, quantity);
+			addProductToCart(index, quantity);
 		}
 		else {
 			system("cls");
@@ -116,15 +117,25 @@ void pickFromMenu() {
 		fstream file("menu.csv");
 		if (file.is_open())
 		{
+			int index = 1;
 			while (getline(file, line))
 			{
 				row.clear();
 
 				std::stringstream str(line);
 
-				while (getline(str, word, ';'))
-					row.push_back(word);
+				row.push_back(to_string(index) + ".");
+
+				int word_number = 0;
+				while (getline(str, word, ';')) {
+					if (word_number != 0) {
+						row.push_back(word);
+					}
+					word_number++;
+				}
 				Menu.push_back(row);
+
+				index++;
 			}
 		}
 		for (int i = 0; i < Menu.size(); i++)

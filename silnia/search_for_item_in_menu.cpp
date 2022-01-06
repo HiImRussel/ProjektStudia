@@ -35,21 +35,18 @@ Order* searchForItemInMenu(string id, int quantity) {
 	bool is_item_found = false;
 	int menu_size = Menu.size();
 
-	for (int i = 0; i < menu_size; i++)
-	{
-		string current_item_id = Menu[i][0];
+	stringstream ss(id);
+	int strAsInt;
+	ss >> strAsInt;
 
-		if (current_item_id == id && !is_item_found) {
-			string product_id = Menu[i][0];
-			string name = Menu[i][1];
-			float price = stof(Menu[i][2]);
-			int product_quantity = quantity;
+	strAsInt--;
 
-			is_item_found = true;
+	if (strAsInt > menu_size-1 || strAsInt<0) return NULL;
 
-			return new Order(product_id, name, price, product_quantity);
-		}
-	}
+	string product_id = Menu[strAsInt][0];
+	string name = Menu[strAsInt][1];
+	float price = stof(Menu[strAsInt][2]);
+	int product_quantity = quantity;
 
-	return NULL;
+	return new Order(product_id, name, price, product_quantity);
 }
