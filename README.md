@@ -12,19 +12,22 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
 4. Skompiluj kod.
 5. Jeśli wszystkie kroki zostały wykonanie poprawnie po skompilowaniu aplikacji użytkownik powinien ujrzeć okno widoczne poniżej:
 
-![](screens/welcome.png)
+![](screens/welcome.PNG)
 ## Sposób działania aplikacji
 - Użytkownik korzystający z aplikacji na wstępie podaję swoje imię oraz nazwisko i wybiera czy zamówienie ma zostać zrealizowane na miejscu czy na dowóz.
 - W przypadku zatwierdzenia opcji na miejscu osoba jest proszona o wybranie numeru stolika, a w przypadku opcji dowozu pod wyznaczony adres należ podać adres dostawy oraz preferowaną godzinę z podanego zakresu.
 - W następnej kolejności ukazuje się wybór dań z menu. Użytkownik wybiera danie poprzez wpisanie odpowiedniego indexu przypisanego do dania.
-![](https://user-images.githubusercontent.com/95539064/148275730-e81b933f-1c08-4077-86b3-b2978a08f970.png)
+![](screens/menu.PNG)
 - Po wybraniu dania użytkownik wpisuje ilość porcji, która ma zostać dodana do koszyka.
 - W celu edycji koszyka należy wcisnąć klawisz "+" i zatwierdzić klawiszem "ENTER".
+![](screens/cart.PNG)
 - Aby usunąć danie z koszyka należy wprowadzić odpowiadający temu daniu numer znajdujący się po lewej stronie dania.
 - Aby wyjść z edycji koszyka należy wcisnąć klawisz "-" i zatwierdzić klawiszem "ENTER"
 - W celu przejścia do podsumowania zamówienia należy w widoku wyboru dań wcisnąć klawisz "-" i potwierdzić klawiszem "ENTER". Podsumowanie zamówienia zawiera informacje o  danych wprowadzone poprzednio przez użytkownika oraz planowany czas przygotowania i końcową cenę.
 - Aby wrócić do składania zamówienia należy wcisnąć klawisz "+" i zatwierdzić wybór klawiszem "ENTER".
 - W celu zakończenia składania zamówienia należy wcisnąć klawisz "-" i zatwierdzić wybór klawiszem "ENTER". Po tej czynności w głównym katalogu aplikacji zostanie wygenerowany rachunek w pliku "rachunek.txt"
+![](screens/checkout.PNG)
+![](screens/bill.PNG)
 
 ## Modyfikacje 
 ##### Godziny pracy i czas przygotowania
@@ -32,9 +35,9 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
     - zmienna working_days_from = odpowiada za dni robocze od ustalonej godziny
     - zmienna working_days_to = odpowiada za dni robocze do ustalonej godziny 
     - zmienna weekend_days_from = odpowiada za weekendy od ustalonej godziny 
-    -zmienna  weekend_days_to = odpowiada za weekendy do ustalonej godziny
+    - zmienna  weekend_days_to = odpowiada za weekendy do ustalonej godziny
     
-    ![](https://user-images.githubusercontent.com/95539064/148458580-f58dbb93-d91e-4515-8bd6-82d047c7cd27.png)
+    ![](screens/globals.PNG)
 
 - Na każde danie zostało przepisane 10 minut przygotowania, jednak można to zmienić w pliku global_varaibles.cpp zmieniając wartość making_time_per_dish = ,,10" na dowolną inną liczbę całkowitą.
 
