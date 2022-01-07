@@ -176,7 +176,7 @@ void pickFromMenu() {
 		cout << endl;
 
 		cout << "[+]. Edytuj koszyk" << endl;
-		cout << "[-]. Next step" << endl;
+		cout << "[-]. Podsumowanie zamowienia" << endl;
 
 		cout << "Prosze wybrac danie lub akcje: ";
 		cin >> id;
