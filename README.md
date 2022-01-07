@@ -15,6 +15,11 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
 ![](screens/welcome.PNG)
 ## Sposób działania aplikacji
 - Użytkownik korzystający z aplikacji na wstępie podaję swoje imię oraz nazwisko i wybiera czy zamówienie ma zostać zrealizowane na miejscu czy na dowóz.
+- W następnym kroku użytkownik proszony jest o wybranie sposobu dostawy. Do wyboru użytkownik posiada dwie opcje:
+    - Jedzenie na miejscu z odpowiadającym indexem 1.
+    - Dowóz jedzenia na wskazany w następnym kroku adres z odpowiadającym indexem 2.
+
+    W celu wybrania sposobu dostawy należy wpisać odpowiedni numer przypisany do poszczególnej metody dostawy i zatwierdzić wybór klawiszem "ENTER"
 - W przypadku zatwierdzenia opcji na miejscu osoba jest proszona o wybranie numeru stolika, a w przypadku opcji dowozu pod wyznaczony adres należ podać adres dostawy oraz preferowaną godzinę z podanego zakresu.
 - W następnej kolejności ukazuje się wybór dań z menu. Użytkownik wybiera danie poprzez wpisanie odpowiedniego indexu przypisanego do dania.
 ![](screens/menu.PNG)
