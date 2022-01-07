@@ -42,7 +42,7 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
     - zmienna weekend_days_from = odpowiada za weekendy od ustalonej godziny 
     - zmienna  weekend_days_to = odpowiada za weekendy do ustalonej godziny
     
-    ![](screens/globals.PNG)
+    ![](screens/globals.png)
 
 - Na każde danie zostało przepisane 10 minut przygotowania, jednak można to zmienić w pliku global_varaibles.cpp zmieniając wartość making_time_per_dish = ,,10" na dowolną inną liczbę całkowitą.
 
@@ -57,7 +57,7 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
 - Cena -> liczba zmiennoprzecinkowa przecinkowa określająca cenę. Wartość dziesiętna musi zostać oddzielona znakiem "." (kropka)
 - Składniki dania -> składniki dania wypisane po przecinku lub przy pomocy innego separatora oprócz ";"
 
-![](https://user-images.githubusercontent.com/95539064/148462658-7bed180c-fb24-49cb-9fa0-b44279cf2e28.png)
+![](screens/menu-items.png)
 
 ## Język
 Aplikacja została napisana w języku C++.
