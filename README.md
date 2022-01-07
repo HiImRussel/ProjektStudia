@@ -12,6 +12,7 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
 4. Skompiluj kod.
 5. Jeśli wszystkie kroki zostały wykonanie poprawnie po skompilowaniu aplikacji użytkownik powinien ujrzeć okno widoczne poniżej:
 
+![](screens/welcome.png)
 ## Sposób działania aplikacji
 - Użytkownik korzystający z aplikacji na wstępie podaję swoje imię oraz nazwisko i wybiera czy zamówienie ma zostać zrealizowane na miejscu czy na dowóz.
 - W przypadku zatwierdzenia opcji na miejscu osoba jest proszona o wybranie numeru stolika, a w przypadku opcji dowozu pod wyznaczony adres należ podać adres dostawy oraz preferowaną godzinę z podanego zakresu.
@@ -32,7 +33,8 @@ Aplikację służy do składania zamówień i rezerwacji miejsc w restauracji.
     - zmienna working_days_to = odpowiada za dni robocze do ustalonej godziny 
     - zmienna weekend_days_from = odpowiada za weekendy od ustalonej godziny 
     -zmienna  weekend_days_to = odpowiada za weekendy do ustalonej godziny
-![](https://user-images.githubusercontent.com/95539064/148458580-f58dbb93-d91e-4515-8bd6-82d047c7cd27.png)
+    
+    ![](https://user-images.githubusercontent.com/95539064/148458580-f58dbb93-d91e-4515-8bd6-82d047c7cd27.png)
 
 - Na każde danie zostało przepisane 10 minut przygotowania, jednak można to zmienić w pliku global_varaibles.cpp zmieniając wartość making_time_per_dish = ,,10" na dowolną inną liczbę całkowitą.
 
