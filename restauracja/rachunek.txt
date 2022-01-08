@@ -1,0 +1,16 @@
+Imie: E
+Nazwisko: E
+
+Adres: 
+E
+E E
+
+Planowane dostarczenie na godzine: 23:30
+
+Zamówione dania: 
+1. Danie: Pizza margharitta Ilosc porcji: 1 Cena za pojedyncze danie: 15 zl Cena za wszystkie porcje dania: 15 zl
+
+Planowany czas przygotowania dan: 10 min
+
+Do zaplaty: 15 zl
+
