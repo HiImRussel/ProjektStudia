@@ -40,6 +40,8 @@ bool canBeDelivered(string delivery_hour) {
     int picked_hour = splitAndConvertStringToNumbers(delivery_hour)[0];
     int picked_minutes = splitAndConvertStringToNumbers(delivery_hour)[1];
 
+    if (picked_hour > 24 || picked_minutes > 59) return false;
+
     if (picked_hour < current_hour) {
         return false;
     }
