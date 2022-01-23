@@ -33,8 +33,8 @@ bool canBeDelivered(string delivery_hour) {
     int current_hour = timeinfo->tm_hour;
     int current_minutes = timeinfo->tm_min;
 
-    //picked delivery hour must be a 5 character long string and current day must be other than Sunday
-    if (delivery_hour.length() != 5 || weekday == 7) return false;
+    //picked delivery hour must be a 5 character long string and current day
+    if (delivery_hour.length() != 5) return false;
 
     //checking if can be delivered in working days
     int picked_hour = splitAndConvertStringToNumbers(delivery_hour)[0];

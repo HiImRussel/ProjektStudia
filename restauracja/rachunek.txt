@@ -1,16 +1,12 @@
 Imie: E
 Nazwisko: E
 
-Adres: 
-2
-2 2
-
-Planowane dostarczenie na godzine: 22:00
+Numer stolika: 1
 
 Zamówione dania: 
-1. Danie: Pizza margharitta Ilosc porcji: 2 Cena za pojedyncze danie: 15 zl Cena za wszystkie porcje dania: 30 zl
+1. Danie: Spaghetti Bolognese Ilosc porcji: 1 Cena za pojedyncze danie: 13 zl Cena za wszystkie porcje dania: 13 zl
 
-Planowany czas przygotowania dan: 20 min
+Planowany czas przygotowania dan: 10 min
 
-Do zaplaty: 30 zl
+Do zaplaty: 13 zl
 
