@@ -58,7 +58,7 @@ bool canBeDelivered(string delivery_hour) {
 
         return checkIfCanBeDelivered(picked_hour, picked_minutes, working_hour_from, working_minutes_from, working_hour_to, working_minutes_to);
     }
-    else if (weekday == 6) {
+    else if (weekday == 6 || weekday == 7 || weekday == 0) {
         //check if can be delivered in weekend working hours
         int working_hour_from = splitAndConvertStringToNumbers(weekend_days_from)[0];
         int working_minutes_from = splitAndConvertStringToNumbers(weekend_days_from)[1];

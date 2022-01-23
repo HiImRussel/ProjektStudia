@@ -102,7 +102,7 @@ int main()
             do {
                 cout << "Godziny pracy restauracji:" << endl;
                 cout << "Pn-Pt: " << working_days_from << " - " << working_days_to << endl;
-                cout << "Sb: " << weekend_days_from << " - " << weekend_days_to << endl;
+                cout << "Sb-Nd: " << weekend_days_from << " - " << weekend_days_to << endl;
 
                 cout << endl;
 
