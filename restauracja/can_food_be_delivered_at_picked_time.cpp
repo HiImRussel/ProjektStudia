@@ -41,7 +41,7 @@ bool canFoodBeDeliveredAtPickedTime() {
         working_hour_to = splitAndConvertStringToNumbers(working_days_to)[0];
         working_minutes_to = splitAndConvertStringToNumbers(working_days_to)[1];
     }
-    else if(weekday == 6) {
+    else if(weekday == 6 || weekday == 7 || weekday == 0) {
         working_hour_to = splitAndConvertStringToNumbers(weekend_days_to)[0];
         working_minutes_to = splitAndConvertStringToNumbers(weekend_days_to)[1];
     }
